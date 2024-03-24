@@ -1,6 +1,5 @@
 package com.geekydroid.kirukkal.ui.theme
 
-import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.lightColorScheme
 import androidx.compose.material3.darkColorScheme
@@ -74,17 +73,10 @@ private val DarkColors = darkColorScheme(
 
 @Composable
 fun KirukkalAppTheme(
-    useDarkTheme: Boolean = isSystemInDarkTheme(),
-    content: @Composable() () -> Unit
+    content: @Composable () -> Unit
 ) {
-    val colors = if (!useDarkTheme) {
-        LightColors
-    } else {
-        DarkColors
-    }
-
     MaterialTheme(
-        colorScheme = colors,
+        colorScheme = LightColors,
         content = content,
         typography = Typography
     )
